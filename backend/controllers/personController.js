@@ -1,4 +1,3 @@
-import e from "cors";
 import db from "../db.js";
 
 export const getPersons = (req, res) => {
@@ -16,7 +15,7 @@ export const addPerson = (req, res) => {
     (err, result) => {
       if (err) return res.status(500).json(err);
       res.json({ message: "Person added", id: result.insertId });
-    }
+    },
   );
 };
 
@@ -30,7 +29,7 @@ export const updatePerson = (req, res) => {
     (err, result) => {
       if (err) return res.status(500).json(err);
       res.json({ message: "Person updated" });
-    }
+    },
   );
 };
 
